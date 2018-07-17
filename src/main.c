@@ -6,7 +6,7 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 12:25:33 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 21:47:24 by null             ###   ########.fr       */
+/*   Updated: 2018/07/17 22:37:40 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print_rooms(t_room *room)
 			ft_putendl("##start");
 		if (room->bool_end_room)
 			ft_putendl("##end");
-		printf("%s %s %s\n", room->room_name, room->xstr, room->ystr);
+		ft_printf("%s %s %s\n", room->room_name, room->xstr, room->ystr);
 		room = room->next_input_room;
 	}
 }
@@ -36,7 +36,7 @@ void	print_links(t_room *room)
 		i = 0;
 		while (i++ < rooms_amount)
 			if  (room->nearby_rooms && room->nearby_rooms[i])
-				printf("%s-%s\n", room->room_name, room->nearby_rooms[i]->room_name);
+				ft_printf("%s-%s\n", room->room_name, room->nearby_rooms[i]->room_name);
 		room = room->next_input_room;
 	}
 	ft_putendl("");
@@ -60,7 +60,7 @@ int					main()
 		error();
 	rooms_amount = count_rooms(room);
 	ants = init_ants(room);
-	printf("%d\n", ants_amount);
+	ft_printf("%d\n", ants_amount);
 	print_rooms(room);
 	print_links(room);
 	move_ants(end_room, ants, ants_amount, rooms_amount);

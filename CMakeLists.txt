@@ -79,10 +79,33 @@ set(LIBFT
         libft/ft_strsplit.c
         libft/ft_strstr.c
         libft/ft_strsub.c
+        libft/ft_strtolow.c
+        libft/ft_strtoupp.c
         libft/ft_strtrim.c
         libft/ft_tolower.c
         libft/ft_toupper.c
         libft/libft.h
+        libft/ft_printf/includes/ft_printf.h
+        libft/ft_printf/src/ft_printf.c
+        libft/ft_printf/src/parse/flags.c
+        libft/ft_printf/src/parse/parse.c
+        libft/ft_printf/src/parse/width.c
+        libft/ft_printf/src/parse/precision.c
+        libft/ft_printf/src/parse/length.c
+        libft/ft_printf/src/handle/handle.c
+        libft/ft_printf/src/handle/number.c
+        libft/ft_printf/src/handle/char.c
+        libft/ft_printf/src/helpers/buffer.c
+        libft/ft_printf/src/handle/wchar.c
+        libft/ft_printf/src/handle/string.c
+        libft/ft_printf/src/handle/pointer.c
+        libft/ft_printf/src/handle/wstring.c
+        libft/ft_printf/src/handle/integer/integer.c
+        libft/ft_printf/src/handle/integer/octal.c
+        libft/ft_printf/src/handle/integer/hexademical.c
+        libft/ft_printf/src/handle/integer/decimal.c
+        libft/ft_printf/src/helpers/push_chars.c
+        libft/ft_printf/src/handle/invalid_specifier.c
         )
 
 add_executable(lem-in

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astrelov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 14:42:15 by astrelov          #+#    #+#             */
-/*   Updated: 2017/11/02 14:42:16 by astrelov         ###   ########.fr       */
+/*   Created: 2018/03/28 12:53:10 by astrielov         #+#    #+#             */
+/*   Updated: 2018/03/28 12:57:19 by astrielov        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+#include "libft.h"
+
+void	ft_putnstr(char const *s, size_t n)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + '0');
-	return (c);
+	size_t	len;
+
+	len = ft_strlen(s);
+	if (s)
+		write(1, s, (len > n) ? n : len);
 }

@@ -15,18 +15,16 @@ int		ft_atoi(const char *str)
 	unsigned long	num;
 	short			isneg;
 
-	isneg = 1;
+	isneg = 0;
 	num = 0;
-	while ((*str > 8 && *str < 14) || *str == 32)
+	while ((*str >= '\b' && *str <= '\r') || *str == ' ')
 		str++;
 	if (*str == '-' || *str == '+')
 		if (*str++ == '-')
-			isneg = -1;
-	while (*str > 47 && *str < 58)
+			isneg = 1;
+	while (*str >= '0' && *str <= '9')
 		num = num * 10 + *str++ - '0';
-	if (num > 9223372036854775807 && isneg < 0)
-		return (0);
 	if (num > 9223372036854775807)
-		return (-1);
-	return ((int)(num * isneg));
+		return (isneg ? 0 : -1);
+	return ((int)(isneg ? -num : num));
 }

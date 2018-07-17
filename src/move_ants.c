@@ -6,7 +6,7 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 19:34:57 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 21:44:25 by null             ###   ########.fr       */
+/*   Updated: 2018/07/17 22:39:09 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	move_ant(t_room *moves, t_ant *ant)
 	ant->curr_room->ants_in_room -= 1;
 	while (moves->next_move)
 		moves = moves->next_move;
-	printf("L%d-%s ", ant->ant_number, moves->room_name);
+	ft_printf("L%d-%s ", ant->ant_number, moves->room_name);
 	ant->curr_room = moves;
 	ant->curr_room->ants_in_room += 1;
 	if (ant->curr_room->bool_end_room)
@@ -83,7 +83,7 @@ void	move_ants(t_room *end_room, t_ant **ants, int ants_amount,
 		if (found)
 			move_ant(end_room, ants[ant_ind]);
 	}
-	puts("");
+	ft_putchar('\n');
 	if (end_room->ants_in_room < ants_amount)
 		move_ants(end_room, ants, ants_amount, rooms_amount);
 }

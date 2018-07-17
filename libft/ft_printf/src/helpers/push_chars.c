@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   push_chars.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astrelov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: astrelov <astrelov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 14:42:15 by astrelov          #+#    #+#             */
-/*   Updated: 2017/11/02 14:42:16 by astrelov         ###   ########.fr       */
+/*   Created: 2018/03/30 13:39:47 by astrelov          #+#    #+#             */
+/*   Updated: 2018/04/18 12:43:46 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+#include "../../includes/ft_printf.h"
+
+void	push_chars(t_buff *buff, char c, size_t amount)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + '0');
-	return (c);
+	while (buff->index + amount >= buff->size)
+		buff_realloc(buff);
+	while (amount--)
+		buff->buff[buff->index++] = c;
 }
