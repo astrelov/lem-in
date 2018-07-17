@@ -13,7 +13,7 @@ set(LEM_IN
         src/init_rooms.c
         src/move_ants.c
         src/lst.c
-        )
+        src/helpers.c src/check_rooms.c)
 
 set(LIBFT
         libft/ft_atoi.c
@@ -88,4 +88,4 @@ set(LIBFT
 add_executable(lem-in
         ${LEM_IN}
         ${LIBFT}
-        src/delete_me_print.c)
+        )

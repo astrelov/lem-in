@@ -6,7 +6,7 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 13:10:14 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 17:14:42 by null             ###   ########.fr       */
+/*   Updated: 2018/07/17 20:15:45 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 t_ant	**init_ants(t_room *room)
 {
-	int		ant_nbr;
 	t_ant	**ants;
+	int		i;
 
 	while (!room->bool_start_room)
-		room = room->next;
+		room = room->next_input_room;
 	ants = (t_ant **)ft_memalloc(sizeof(t_ant *) * (room->ants_in_room + 1));
-	ant_nbr = 0;
-	while (++ant_nbr <= room->ants_in_room)
+	i = 0;
+	while (i < room->ants_in_room)
 	{
-		ants[ant_nbr - 1] = (t_ant *)ft_memalloc(sizeof(t_ant));
-		ants[ant_nbr - 1]->ant_number = ant_nbr;
-		ants[ant_nbr - 1]->curr_room = room;
+		ants[i] = (t_ant *)ft_memalloc(sizeof(t_ant));
+		ants[i]->ant_number = i + 1;
+		ants[i]->curr_room = room;
+		i++;
 	}
-	return ants;
+	return (ants);
 }

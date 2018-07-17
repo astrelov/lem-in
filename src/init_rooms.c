@@ -6,22 +6,11 @@
 /*   By: astrelov <astrelov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 17:06:39 by null              #+#    #+#             */
-/*   Updated: 2018/07/17 17:06:39 by null             ###   ########.fr       */
+/*   Updated: 2018/07/17 17:06:58 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem-in.h"
-
-char	*get_room_name(char *line, int pos, char split_by)
-{
-	char 	*name;
-	char 	**split;
-
-	split = ft_strsplit(line, split_by);
-	name = ft_strdup(split[pos]);
-	free_string_arr(split);
-	return (name);
-}
 
 void	init_rooms(int *ants_amount, t_room **first_room)
 {

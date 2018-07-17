@@ -14,17 +14,17 @@
 
 void	lst_push(t_room *el, t_room *lst)
 {
-	while(lst->next)
-		lst = lst->next;
-	lst->next = el;
-	el->next = NULL;
+	while(lst->next_move)
+		lst = lst->next_move;
+	lst->next_move = el;
+	el->next_move = NULL;
 }
 
 void	lst_pop(t_room *lst)
 {
-	if (!lst->next)
-		return;
-	while (lst->next->next)
-		lst = lst->next;
-	lst->next = NULL;
+	if (!lst->next_move)
+		return ;
+	while (lst->next_move->next_move)
+		lst = lst->next_move;
+	lst->next_move = NULL;
 }
