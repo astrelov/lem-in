@@ -6,17 +6,14 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 12:28:47 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 21:16:28 by null             ###   ########.fr       */
+/*   Updated: 2018/07/17 21:24:50 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
 
-#include <stdio.h>
 # include "../libft/libft.h"
-
-# define NEARBY_ROOMS		(path_room->nearby_rooms)
 
 # define FALSE				0
 # define TRUE				1

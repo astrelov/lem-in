@@ -6,7 +6,7 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 19:34:57 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 22:39:09 by null             ###   ########.fr       */
+/*   Updated: 2018/07/19 18:25:45 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ void	move_ants(t_room *end_room, t_ant **ants, int ants_amount,
 															search_depth++);
 		if (found)
 			move_ant(end_room, ants[ant_ind]);
+		else if (ants[ant_ind]->curr_room->bool_start_room)
+			break ;
 	}
 	ft_putchar('\n');
 	if (end_room->ants_in_room < ants_amount)

@@ -6,7 +6,7 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 12:25:33 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 22:37:40 by null             ###   ########.fr       */
+/*   Updated: 2018/07/19 17:34:26 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,34 @@ void	print_links(t_room *room)
 		i = 0;
 		while (i++ < rooms_amount)
 			if  (room->nearby_rooms && room->nearby_rooms[i])
-				ft_printf("%s-%s\n", room->room_name, room->nearby_rooms[i]->room_name);
+				ft_printf("%s-%s\n", room->room_name,
+										room->nearby_rooms[i]->room_name);
 		room = room->next_input_room;
 	}
 	ft_putendl("");
+}
+
+void				free_rooms(t_room *room)
+{
+	if (room->next_input_room)
+		free_rooms(room->next_input_room);
+	ft_memdel((void **)&room->ystr);
+	ft_memdel((void **)&room->xstr);
+	ft_memdel((void **)&room->room_name);
+	if (room->nearby_rooms)
+		ft_memdel((void **)&room->nearby_rooms);
+	ft_memdel((void **)&room);
+}
+
+void 				free_ants(t_ant **ants)
+{
+	int i = 0;
+	while (*ants)
+	{
+		free(*ants++);
+		i++;
+	}
+	free(ants - i);
 }
 
 int					main()
@@ -64,5 +88,7 @@ int					main()
 	print_rooms(room);
 	print_links(room);
 	move_ants(end_room, ants, ants_amount, rooms_amount);
+	free_rooms(room);
+	free_ants(ants);
 	return (0);
 }

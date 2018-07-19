@@ -6,13 +6,14 @@
 /*   By: astrelov <astrelov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 17:06:39 by null              #+#    #+#             */
-/*   Updated: 2018/07/17 23:26:23 by null             ###   ########.fr       */
+/*   Updated: 2018/07/17 23:27:42 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem-in.h"
 
-void	handle_line(int line_type, char *line, t_room **first_room, int *ants_amount)
+void	handle_line(int line_type, char *line, t_room **first_room,
+															int *ants_amount)
 {
 	if (line_type == ANTS_AMOUNT && !g_got_ants_amount && !g_next_room_type)
 	{
@@ -46,7 +47,7 @@ void	init_rooms(int *ants_amount, t_room **first_room)
 	{
 		line_type = check_input_line(line);
 		handle_line(line_type, line, first_room, ants_amount);
-		free(line);
+		ft_strdel(&line);
 	}
-	free(line);
+	ft_strdel(&line);
 }

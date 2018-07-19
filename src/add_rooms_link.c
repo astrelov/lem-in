@@ -47,4 +47,6 @@ void 	add_rooms_link(t_room *first_room, char *line)
 		error();
 	paste_link(room1, room2, rooms_amount);
 	paste_link(room2, room1, rooms_amount);
+	ft_strdel(&node_name1);
+	ft_strdel(&node_name2);
 }

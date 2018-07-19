@@ -6,14 +6,12 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 16:32:38 by astrielov         #+#    #+#             */
-/*   Updated: 2018/04/20 16:33:54 by astrelov         ###   ########.fr       */
+/*   Updated: 2018/07/19 13:08:23 by null             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_NEW_FT_PRINTF_H
 # define FT_PRINTF_NEW_FT_PRINTF_H
-
-#include <stdio.h>
 
 # include <inttypes.h>
 # include <stdarg.h>
