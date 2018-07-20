@@ -6,17 +6,17 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 12:53:08 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 17:04:24 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:43:07 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 static int	check_ant_amount(const char *line)
 {
-	int 	nbr;
-	char 	*nbr_str;
-	int 	equal;
+	int		nbr;
+	char	*nbr_str;
+	int		equal;
 
 	equal = FALSE;
 	nbr = ft_atoi(line);
@@ -32,8 +32,8 @@ static int	check_ant_amount(const char *line)
 static int	check_for_coord(char *line)
 {
 	int		nbr;
-	char 	*nbrstr;
-	int 	equal;
+	char	*nbrstr;
+	int		equal;
 
 	nbr = ft_atoi(line);
 	nbrstr = ft_itoa(nbr);
@@ -42,11 +42,11 @@ static int	check_for_coord(char *line)
 	return (equal);
 }
 
-static int 	check_new_node(const char *line)
+static int	check_new_node(const char *line)
 {
 	char	**split;
-	int 	isx;
-	int 	isy;
+	int		isx;
+	int		isy;
 
 	isx = FALSE;
 	isy = FALSE;
@@ -60,10 +60,10 @@ static int 	check_new_node(const char *line)
 	return (isx && isy);
 }
 
-static int 	check_nodes_link(const char *line)
+static int	check_nodes_link(const char *line)
 {
 	char	**split;
-	int 	splits_amount;
+	int		splits_amount;
 
 	split = ft_strsplit(line, '-');
 	splits_amount = count_splits(split);
@@ -71,21 +71,21 @@ static int 	check_nodes_link(const char *line)
 	return (splits_amount == 2);
 }
 
-int 				check_input_line(char *line)
+int			check_input_line(char *line)
 {
 	if (*line == 'L' || *line == '-' || *line == ' ')
-		return INVALID;
+		return (INVALID);
 	if (ft_strequ(line, "##start"))
-		return START;
+		return (START);
 	if (ft_strequ(line, "##end"))
-		return END;
+		return (END);
 	if (*line == '#')
-		return COMMENT;
+		return (COMMENT);
 	if (check_ant_amount(line))
-		return ANTS_AMOUNT;
+		return (ANTS_AMOUNT);
 	if (check_new_node(line))
-		return NEW_ROOM;
+		return (NEW_ROOM);
 	if (check_nodes_link(line))
-		return ROOMS_LINK;
-	return INVALID;
+		return (ROOMS_LINK);
+	return (INVALID);
 }

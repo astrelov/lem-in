@@ -6,7 +6,7 @@
 #    By: astrelov <astrelov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 08:39:20 by astrelov          #+#    #+#              #
-#    Updated: 2018/07/20 09:02:41 by null             ###   ########.fr        #
+#    Updated: 2018/07/20 15:48:31 by astrelov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,15 +35,15 @@ objdir:
 					@mkdir -p $(OBJDIR)
 
 $(OBJDIR)%.o:		src/%.c
-					gcc $(CFLAGS) $(HEADERS) -c $< -o $@
+					@gcc $(CFLAGS) $(HEADERS) -c $< -o $@
 
 $(NAME):			$(OBJS)
 					@gcc $(CFLAGS) -o $(NAME) $(OBJS) -L ./libft -lft
 					@printf "\033[0;32mlem-in: DONE\033[0m\n"
 
 all:				| objdir
-					make --directory=./libft
-					make $(NAME)
+					@make --directory=./libft
+					@make $(NAME)
 
 clean:
 					@rm -rf $(OBJDIR)

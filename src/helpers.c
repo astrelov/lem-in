@@ -6,21 +6,21 @@
 /*   By: null <null@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 17:34:31 by null              #+#    #+#             */
-/*   Updated: 2018/07/17 19:56:54 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:40:55 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
-void	error()
+void	error(void)
 {
 	ft_errmsg("ERROR\n");
 	exit(0);
 }
 
-int 	count_rooms(t_room *room)
+int		count_rooms(t_room *room)
 {
-	int 		rooms_amount;
+	int	rooms_amount;
 
 	rooms_amount = 0;
 	while (room)
@@ -33,8 +33,8 @@ int 	count_rooms(t_room *room)
 
 char	*get_split_str_part(char *line, int pos, char split_by)
 {
-	char 	*name;
-	char 	**split;
+	char	*name;
+	char	**split;
 
 	split = ft_strsplit(line, split_by);
 	name = ft_strdup(split[pos]);
@@ -42,9 +42,9 @@ char	*get_split_str_part(char *line, int pos, char split_by)
 	return (name);
 }
 
-int 		count_splits(char **split)
+int		count_splits(char **split)
 {
-	int 	amount;
+	int		amount;
 
 	amount = 0;
 	while (*split++)

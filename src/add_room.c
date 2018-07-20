@@ -6,11 +6,11 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 13:23:42 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 19:10:56 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:34:29 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 void	add_room(t_room **first_room, char *line, int ants_amount)
 {

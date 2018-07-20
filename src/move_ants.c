@@ -6,11 +6,11 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 19:34:57 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/19 18:25:45 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:37:52 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 void	move_ant(t_room *moves, t_ant *ant)
 {
@@ -24,7 +24,7 @@ void	move_ant(t_room *moves, t_ant *ant)
 		ant->finished = 1;
 }
 
-int 	already_in_moves(t_room *moves, t_room *room_to_find)
+int		already_in_moves(t_room *moves, t_room *room_to_find)
 {
 	while (moves)
 	{
@@ -35,10 +35,10 @@ int 	already_in_moves(t_room *moves, t_room *room_to_find)
 	return (FALSE);
 }
 
-int 	find_route(t_room *moves, t_room *path_room,
+int		find_route(t_room *moves, t_room *path_room,
 							t_room *ant_node, int search_depth)
 {
-	int 	i;
+	int		i;
 
 	if (!search_depth)
 		return (FALSE);
@@ -65,9 +65,9 @@ int 	find_route(t_room *moves, t_room *path_room,
 void	move_ants(t_room *end_room, t_ant **ants, int ants_amount,
 							int rooms_amount)
 {
-	int 		ant_ind;
-	int 		found;
-	int 		search_depth;
+	int			ant_ind;
+	int			found;
+	int			search_depth;
 
 	ant_ind = -1;
 	while (++ant_ind < ants_amount)

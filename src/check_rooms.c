@@ -6,15 +6,15 @@
 /*   By: astrelov <astrelov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 20:20:48 by null              #+#    #+#             */
-/*   Updated: 2018/07/17 21:34:54 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:43:26 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 int		check_start_end_path(t_room *end_room, t_room *prev_path_room)
 {
-	int 	i;
+	int		i;
 
 	prev_path_room->next_move = NULL;
 	i = -1;
@@ -35,7 +35,7 @@ int		check_start_end_path(t_room *end_room, t_room *prev_path_room)
 void	check_start_end_rooms(t_room *room)
 {
 	int		start_found;
-	int 	end_found;
+	int		end_found;
 
 	start_found = FALSE;
 	end_found = FALSE;

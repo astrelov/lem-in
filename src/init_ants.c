@@ -6,11 +6,11 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 13:10:14 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/17 20:15:45 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:34:32 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 t_ant	**init_ants(t_room *room)
 {

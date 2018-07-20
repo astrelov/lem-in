@@ -4,7 +4,7 @@ project(lem-in C)
 set(CMAKE_C_STANDARD 99)
 
 set(LEM_IN
-        includes/lem-in.h
+        includes/lem_in.h
         src/main.c
         src/check_input_line.c
         src/init_ants.c
@@ -51,6 +51,7 @@ set(LIBFT
         libft/ft_putendl_fd.c
         libft/ft_putnbr.c
         libft/ft_putnbr_fd.c
+        libft/ft_putnstr.c
         libft/ft_putstr.c
         libft/ft_putstr_fd.c
         libft/ft_strcat.c
@@ -104,6 +105,7 @@ set(LIBFT
         libft/ft_printf/src/handle/integer/octal.c
         libft/ft_printf/src/handle/integer/hexademical.c
         libft/ft_printf/src/handle/integer/decimal.c
+        libft/ft_printf/src/handle/integer/tmp.c
         libft/ft_printf/src/helpers/push_chars.c
         libft/ft_printf/src/handle/invalid_specifier.c
         )

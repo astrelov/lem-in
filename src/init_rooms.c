@@ -6,11 +6,11 @@
 /*   By: astrelov <astrelov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 17:06:39 by null              #+#    #+#             */
-/*   Updated: 2018/07/17 23:27:42 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:39:52 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 void	handle_line(int line_type, char *line, t_room **first_room,
 															int *ants_amount)
@@ -38,7 +38,7 @@ void	handle_line(int line_type, char *line, t_room **first_room,
 void	init_rooms(int *ants_amount, t_room **first_room)
 {
 	char			*line;
-	int 			line_type;
+	int				line_type;
 
 	g_got_ants_amount = 0;
 	g_got_rooms_link = 0;

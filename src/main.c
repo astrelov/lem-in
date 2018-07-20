@@ -6,11 +6,11 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 12:25:33 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/19 17:34:26 by null             ###   ########.fr       */
+/*   Updated: 2018/07/20 15:39:38 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lem-in.h"
+#include "../includes/lem_in.h"
 
 void	print_rooms(t_room *room)
 {
@@ -27,15 +27,15 @@ void	print_rooms(t_room *room)
 
 void	print_links(t_room *room)
 {
-	int 	rooms_amount;
-	int 	i;
+	int		rooms_amount;
+	int		i;
 
 	rooms_amount = count_rooms(room);
 	while (room)
 	{
 		i = 0;
 		while (i++ < rooms_amount)
-			if  (room->nearby_rooms && room->nearby_rooms[i])
+			if (room->nearby_rooms && room->nearby_rooms[i])
 				ft_printf("%s-%s\n", room->room_name,
 										room->nearby_rooms[i]->room_name);
 		room = room->next_input_room;
@@ -43,7 +43,7 @@ void	print_links(t_room *room)
 	ft_putendl("");
 }
 
-void				free_rooms(t_room *room)
+void	free_rooms(t_room *room)
 {
 	if (room->next_input_room)
 		free_rooms(room->next_input_room);
@@ -55,9 +55,11 @@ void				free_rooms(t_room *room)
 	ft_memdel((void **)&room);
 }
 
-void 				free_ants(t_ant **ants)
+void	free_ants(t_ant **ants)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 	while (*ants)
 	{
 		free(*ants++);
@@ -66,7 +68,7 @@ void 				free_ants(t_ant **ants)
 	free(ants - i);
 }
 
-int					main()
+int		main(void)
 {
 	int				ants_amount;
 	int				rooms_amount;
