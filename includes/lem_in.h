@@ -6,7 +6,7 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 12:28:47 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/20 15:46:23 by astrelov         ###   ########.fr       */
+/*   Updated: 2018/07/31 16:20:39 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ int							check_input_line(char *line);
 void						check_start_end_rooms(t_room *room);
 int							check_start_end_path(t_room *end_room,
 											t_room *prev_path_room);
+
+void						free_ants(t_ant **ants);
+void						free_rooms(t_room *room);
+
+void						print_rooms(t_room *room);
+void						print_links(t_room *room);
 
 void						init_rooms(int *ants_amount, t_room **first_room);
 t_ant						**init_ants(t_room *room);

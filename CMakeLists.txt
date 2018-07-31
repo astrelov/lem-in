@@ -13,7 +13,7 @@ set(LEM_IN
         src/init_rooms.c
         src/move_ants.c
         src/lst.c
-        src/helpers.c src/check_rooms.c)
+        src/helpers.c src/check_rooms.c src/print_map_info.c)
 
 set(LIBFT
         libft/ft_atoi.c
@@ -108,7 +108,7 @@ set(LIBFT
         libft/ft_printf/src/handle/integer/tmp.c
         libft/ft_printf/src/helpers/push_chars.c
         libft/ft_printf/src/handle/invalid_specifier.c
-        )
+        src/free_rooms_and_ants.c)
 
 add_executable(lem-in
         ${LEM_IN}
