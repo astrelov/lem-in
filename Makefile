@@ -6,7 +6,7 @@
 #    By: astrelov <astrelov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/20 08:39:20 by astrelov          #+#    #+#              #
-#    Updated: 2018/07/31 16:23:59 by astrelov         ###   ########.fr        #
+#    Updated: 2018/08/04 18:41:25 by astrelov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME =				lem-in
 
 CFLAGS = 			-Wall -Wextra -Werror
 
-HEADERS = 			-I ./includes
+HEADER =			./includes/lem_in.h
+
+INCLUDES = 			-I ./includes
 
 OBJDIR = 			obj/
 
@@ -46,8 +48,8 @@ $(OBJS):            | objdir
 objdir:
 					@mkdir -p $(OBJDIR)
 
-$(OBJDIR)%.o:		src/%.c
-					@gcc $(CFLAGS) $(HEADERS) -c $< -o $@
+$(OBJDIR)%.o:		src/%.c $(HEADER)
+					@gcc $(CFLAGS) $(INCLUDES) -c $< -o $@
 					@printf "."
 
 clean:
