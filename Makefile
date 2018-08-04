@@ -39,7 +39,7 @@ all:
 
 $(NAME):			$(OBJS)
 					@gcc $(CFLAGS) -o $(NAME) $(OBJS) -L ./libft -lft
-					@printf "\033[0;32mlem-in: DONE\033[0m\n"
+					@printf "\n\033[0;32mlem-in: DONE\033[0m\n"
 
 $(OBJS):            | objdir
 
@@ -48,6 +48,7 @@ objdir:
 
 $(OBJDIR)%.o:		src/%.c
 					@gcc $(CFLAGS) $(HEADERS) -c $< -o $@
+					@printf "."
 
 clean:
 					@rm -rf $(OBJDIR)
