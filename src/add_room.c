@@ -6,7 +6,7 @@
 /*   By: astrielov <astrielov@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 13:23:42 by astrielov         #+#    #+#             */
-/*   Updated: 2018/07/20 15:34:29 by astrelov         ###   ########.fr       */
+/*   Updated: 2018/08/04 14:23:58 by astrelov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,14 @@ void	add_room(t_room **first_room, char *line, int ants_amount)
 		*first_room = new_room;
 	else
 	{
-		tmp = *first_room;
-		while (tmp->next_input_room)
-			tmp = tmp->next_input_room;
-		tmp->next_input_room = new_room;
+		new_room->next_input_room = *first_room;
+		*first_room = new_room;
+	}
+	tmp = new_room->next_input_room;
+	while (tmp)
+	{
+		if (ft_strequ(tmp->room_name, new_room->room_name))
+			error();
+		tmp = tmp->next_input_room;
 	}
 }

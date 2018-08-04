@@ -12,7 +12,7 @@
 
 #include "../includes/lem_in.h"
 
-static int	check_ant_amount(const char *line)
+static int	check_ants_amount(const char *line)
 {
 	int		nbr;
 	char	*nbr_str;
@@ -42,7 +42,7 @@ static int	check_for_coord(char *line)
 	return (equal);
 }
 
-static int	check_new_node(const char *line)
+static int	check_new_room(const char *line)
 {
 	char	**split;
 	int		isx;
@@ -60,7 +60,7 @@ static int	check_new_node(const char *line)
 	return (isx && isy);
 }
 
-static int	check_nodes_link(const char *line)
+static int	check_rooms_link(const char *line)
 {
 	char	**split;
 	int		splits_amount;
@@ -81,11 +81,11 @@ int			check_input_line(char *line)
 		return (END);
 	if (*line == '#')
 		return (COMMENT);
-	if (check_ant_amount(line))
+	if (check_ants_amount(line))
 		return (ANTS_AMOUNT);
-	if (check_new_node(line))
+	if (check_new_room(line))
 		return (NEW_ROOM);
-	if (check_nodes_link(line))
+	if (check_rooms_link(line))
 		return (ROOMS_LINK);
 	return (INVALID);
 }

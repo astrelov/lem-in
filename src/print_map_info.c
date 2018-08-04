@@ -14,15 +14,13 @@
 
 void	print_rooms(t_room *room)
 {
-	while (room)
-	{
-		if (room->bool_start_room)
-			ft_putendl("##start");
-		if (room->bool_end_room)
-			ft_putendl("##end");
-		ft_printf("%s %s %s\n", room->room_name, room->xstr, room->ystr);
-		room = room->next_input_room;
-	}
+	if (room->next_input_room)
+		print_rooms(room->next_input_room);
+	if (room->bool_start_room)
+		ft_putendl("##start");
+	if (room->bool_end_room)
+		ft_putendl("##end");
+	ft_printf("%s %s %s\n", room->room_name, room->xstr, room->ystr);
 }
 
 void	print_links(t_room *room)
